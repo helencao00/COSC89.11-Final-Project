@@ -82,5 +82,6 @@ public class ThingFinder : MonoBehaviour {
         var labels = response.Result.Images[0].Classifiers[0].Classes.Select(c => (c._Class, c.Score)).ToArray();
         var labelsStr = string.Join(", ", labels);
         Debug.Log($"Result: {labelsStr}");
+        
     }
 }
