@@ -3,6 +3,7 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.IO;
 using IBM.Cloud.SDK;
 using IBM.Cloud.SDK.Authentication;
@@ -18,9 +19,9 @@ public class ThingFinder : MonoBehaviour {
     Authenticator authenticator;
     VisualRecognitionService recognizer;
     Texture2D frameBuffer;
-    const string ApiKey = @"";
-    const string VersionDate = @"";
-    const string ClassifierID = @"";
+    const string ApiKey = @"od5t381iEMYecc8CPPLBE5zoVEry2GZbYW-xuovotVf1";
+    const string VersionDate = @"2018-03-19";
+    const string ClassifierID = @"DefaultCustomModel_122886958";
 
     IEnumerator Start () {
         // Authenticate
@@ -35,6 +36,9 @@ public class ThingFinder : MonoBehaviour {
     void OnDisable () => cameraManager.frameReceived -= OnPreviewFrame;
 
     void OnPreviewFrame (ARCameraFrameEventArgs args) {
+        // Skip
+        if (Time.frameCount % 30 != 0)
+            return;
         // Get frame
         if (!cameraManager.TryGetLatestImage(out var image))
             return;
@@ -75,6 +79,8 @@ public class ThingFinder : MonoBehaviour {
     }
 
     void OnClassificationResult (DetailedResponse<ClassifiedImages> response, IBMError error) {
-        var image = response.Result.Images[0];
+        var labels = response.Result.Images[0].Classifiers[0].Classes.Select(c => (c._Class, c.Score)).ToArray();
+        var labelsStr = string.Join(", ", labels);
+        Debug.Log($"Result: {labelsStr}");
     }
 }
