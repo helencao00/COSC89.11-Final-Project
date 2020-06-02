@@ -36,7 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\ThingFinder.cs" />
+     <Compile Include="Assets\Fiinder.cs" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2019.3.11f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -214,14 +214,14 @@
     <Reference Include="UnityEditor">
         <HintPath>/Applications/Unity/Hub/Editor/2019.3.11f1/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="NSubstitute">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Assets/Watson/Plugins/NSubstitute.dll</HintPath>
-    </Reference>
     <Reference Include="websocket-sharp">
         <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Assets/IBMCore/Plugins/websocket-sharp.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
         <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Assets/IBMCore/ThirdParty/JsonDotNet/Standalone/Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NSubstitute">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Assets/Watson/Plugins/NSubstitute.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>/Applications/Unity/Hub/Editor/2019.3.11f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -583,35 +583,20 @@
     <Reference Include="Boo.Lang">
         <HintPath>/Applications/Unity/Hub/Editor/2019.3.11f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.Management">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
         <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.CollabProxy.Editor">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    <Reference Include="Unity.XR.ARKit">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.ARKit.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Subsystem.Registration">
         <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VSCode.Editor">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARSubsystems">
         <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.ARSubsystems.dll</HintPath>
@@ -619,29 +604,44 @@
     <Reference Include="Unity.XR.ARSubsystems.Editor">
         <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.ARSubsystems.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.ARCore">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.ARCore.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.XR.ARFoundation.Editor">
         <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.ARFoundation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARFoundation">
         <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.ARFoundation.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.XR.Management">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+    <Reference Include="UnityEngine.UI">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.XR.ARKit">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.ARKit.dll</HintPath>
+    <Reference Include="Unity.XR.ARCore.Editor">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.ARCore.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.CollabProxy.Editor">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
         <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Rider.Editor">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.XR.ARKit.Editor">
         <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.ARKit.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.XR.ARCore">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.ARCore.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.XR.ARCore.Editor">
-        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/Unity.XR.ARCore.Editor.dll</HintPath>
+    <Reference Include="UnityEditor.UI">
+        <HintPath>/Users/yusuf/Desktop/COSC89.11-Final-Project/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

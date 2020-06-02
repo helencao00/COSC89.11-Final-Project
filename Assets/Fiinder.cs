@@ -1,24 +1,28 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.IO;
+using System.Threading.Tasks;
 using IBM.Cloud.SDK;
 using IBM.Cloud.SDK.Authentication;
 using IBM.Cloud.SDK.Authentication.Iam;
 using IBM.Watson.VisualRecognition.V3;
 using IBM.Watson.VisualRecognition.V3.Model;
 
-public class ThingFinder : MonoBehaviour {
+public class Fiinder : MonoBehaviour {
 
-    [SerializeField]
-    ARCameraManager cameraManager;
+    public ARCameraManager cameraManager;
+    public Text text;
+    public AudioClip soundEffect;
 
     Authenticator authenticator;
     VisualRecognitionService recognizer;
     Texture2D frameBuffer;
+    bool resultInProgress; // Pretty janky state management
     const string ApiKey = @"od5t381iEMYecc8CPPLBE5zoVEry2GZbYW-xuovotVf1";
     const string VersionDate = @"2018-03-19";
     const string ClassifierID = @"DefaultCustomModel_122886958";
@@ -78,10 +82,25 @@ public class ThingFinder : MonoBehaviour {
         image.Dispose();
     }
 
-    void OnClassificationResult (DetailedResponse<ClassifiedImages> response, IBMError error) {
+    async void OnClassificationResult (DetailedResponse<ClassifiedImages> response, IBMError error) {
+        // Dont trigger multiple interactions
+        if (resultInProgress)
+            return;
+        resultInProgress = true;
+        // Get results
         var labels = response.Result.Images[0].Classifiers[0].Classes.Select(c => (c._Class, c.Score)).ToArray();
         var labelsStr = string.Join(", ", labels);
         Debug.Log($"Result: {labelsStr}");
-        
+        // Check
+        if (labels.Length == 0)
+            return;
+        // Trigger interaction
+        var label = labels[0];
+        text.text = $"We found your {label._Class}";
+        AudioSource.PlayClipAtPoint(soundEffect, Vector3.zero);
+        await Task.Delay(10_000);
+        // Reset state
+        text.text = string.Empty;
+        resultInProgress = false;
     }
 }
