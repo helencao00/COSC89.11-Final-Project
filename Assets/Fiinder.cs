@@ -96,6 +96,8 @@ public class Fiinder : MonoBehaviour {
             return;
         // Trigger interaction
         var label = labels[0];
+        if (label.Score < 0.5)
+            return;
         text.text = $"We found your {label._Class}";
         AudioSource.PlayClipAtPoint(soundEffect, Vector3.zero);
         await Task.Delay(10_000);
